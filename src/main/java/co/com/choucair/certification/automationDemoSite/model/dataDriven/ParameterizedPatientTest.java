@@ -17,7 +17,7 @@ import java.util.List;
 
 @RunWith(SerenityParameterizedRunner.class)
 @UseTestDataFrom(value = "src/test/resources/testData/patients.csv")
-public class ParameterizedTest{
+public class ParameterizedPatientTest {
 
     List<PatientData> patientDataList;
     PatientData patientData;
