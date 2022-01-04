@@ -30,7 +30,7 @@ public class AutomationDoctorStepDefinitions {
     }
 
     @Then("^el verifica que se presente en pantalla el mensaje Datos guardados correctamente$")
-    public void el_verifica_que_se_presente_en_pantalla_el_mensaje_datos_guardados_correctamente(List<DoctorData> doctorDataList) throws Throwable {
+    public void el_verifica_que_se_presente_en_pantalla_el_mensaje_datos_guardados_correctamente(List<DoctorData> doctorDataList){
         OnStage.theActorInTheSpotlight().should(GivenWhenThen.seeThat(AnswerRegisterDoctor.toThe(doctorDataList)));
     }
 

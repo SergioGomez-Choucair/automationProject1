@@ -1,10 +1,12 @@
 package co.com.choucair.certification.automationDemoSite.model.dataDriven;
 
 import co.com.choucair.certification.automationDemoSite.model.PatientData;
-import co.com.choucair.certification.automationDemoSite.tasks.*;
-import io.github.bonigarcia.wdm.WebDriverManager;
+import co.com.choucair.certification.automationDemoSite.questions.AnswerRegisterPatient;
+import co.com.choucair.certification.automationDemoSite.tasks.OpenRegisterPatient;
+import co.com.choucair.certification.automationDemoSite.tasks.OpenUp;
+import co.com.choucair.certification.automationDemoSite.tasks.RegisterPatient;
 import net.serenitybdd.junit.runners.SerenityParameterizedRunner;
-import net.serenitybdd.screenplay.Actor;
+import net.serenitybdd.screenplay.GivenWhenThen;
 import net.serenitybdd.screenplay.actors.OnStage;
 import net.serenitybdd.screenplay.actors.OnlineCast;
 import net.thucydides.junit.annotations.UseTestDataFrom;
@@ -36,12 +38,14 @@ public class ParameterizedPatientTest {
     public void shouldRegisterPatientSuccessfully(){
         patientDataList = new ArrayList<>();
         patientData = new PatientData();
+        String mensaje = "Datos guardados correctamente.";
 
         patientData.setName(name);
         patientData.setLastName(lastName);
         patientData.setPhone(phone);
         patientDataList.add(0,patientData);
         OnStage.theActorInTheSpotlight().attemptsTo(RegisterPatient.patientForm(patientDataList));
+        OnStage.theActorInTheSpotlight().should(GivenWhenThen.seeThat(AnswerRegisterPatient.toThe(mensaje)));
     }
 
 }
