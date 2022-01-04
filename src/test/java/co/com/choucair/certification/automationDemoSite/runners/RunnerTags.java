@@ -6,7 +6,7 @@ import net.serenitybdd.cucumber.CucumberWithSerenity;
 import org.junit.runner.RunWith;
 
 @RunWith(CucumberWithSerenity.class)
-@CucumberOptions(features = "src/test/resources/features/registro_doctor.feature",
+@CucumberOptions(features = "src/test/resources/features/agendar_cita_medica.feature",
         tags="@stories",
         glue = "co.com.choucair.certification.automationDemoSite.stepDefinitions",
         snippets = SnippetType.CAMELCASE

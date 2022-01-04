@@ -6,4 +6,5 @@ import org.openqa.selenium.By;
 
 public class ListaAdministracionPage extends PageObject {
     public static final Target AGREGAR_DOCTOR = Target.the("botón para abrir el formulario de registro de un doctor").located(By.xpath("//a[@href='addDoctor']"));
+    public static final Target AGREGAR_PACIENTE = Target.the("botón para abrir el formulario de registro de pacientes").located(By.cssSelector("a[href='addPatient']"));
 }

@@ -8,15 +8,15 @@ import net.serenitybdd.screenplay.questions.Text;
 
 import java.util.List;
 
-public class Answer implements Question<Boolean> {
+public class AnswerRegisterDoctor implements Question<Boolean> {
     private List<DoctorData> doctorDataList;
 
-    public Answer(List<DoctorData> doctorDataList) {
+    public AnswerRegisterDoctor(List<DoctorData> doctorDataList) {
         this.doctorDataList = doctorDataList;
     }
 
-    public static Answer toThe(List<DoctorData> doctorDataList){
-        return new Answer(doctorDataList);
+    public static AnswerRegisterDoctor toThe(List<DoctorData> doctorDataList){
+        return new AnswerRegisterDoctor(doctorDataList);
     }
     @Override
     public Boolean answeredBy(Actor actor) {

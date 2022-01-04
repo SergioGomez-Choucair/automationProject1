@@ -6,14 +6,12 @@ import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.Tasks;
 import net.serenitybdd.screenplay.actions.Click;
 
-public class OpenRegisterDoctor implements Task {
+public class OpenRegisterPatient implements Task {
 
-    public static OpenRegisterDoctor doctorForm() {
-        return Tasks.instrumented(OpenRegisterDoctor.class);
-    }
+    public static OpenRegisterPatient patientForm() { return Tasks.instrumented(OpenRegisterPatient.class); }
 
     @Override
     public <T extends Actor> void performAs(T actor) {
-        actor.attemptsTo(Click.on(ListaAdministracionPage.AGREGAR_DOCTOR));
+       actor.attemptsTo(Click.on(ListaAdministracionPage.AGREGAR_PACIENTE));
     }
 }

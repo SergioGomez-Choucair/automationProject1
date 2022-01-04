@@ -16,3 +16,11 @@
     Examples:
       |nombres  |apellidos      |telefono  |numero_documento       |mensaje                      |
       |Pablo    |Perez          |3102345567|1013234560             |Datos guardados correctamente.|
+
+@scenario2
+    Scenario: Realizar el Registro de un Paciente
+      Given que Carlos necesita registrar un nuevo paciente
+      When el realiza el registro del paciente en el aplicativo de Administración de Hospitales
+        |name   |lastName      |phone     |
+        |Juan   | Lopez        |3124567897|
+      Then el verifica que se muestre en pantalla el mensaje Datos guardados correctamente.

@@ -1,11 +1,10 @@
 package co.com.choucair.certification.automationDemoSite.stepDefinitions;
 
 import co.com.choucair.certification.automationDemoSite.model.DoctorData;
-import co.com.choucair.certification.automationDemoSite.questions.Answer;
+import co.com.choucair.certification.automationDemoSite.questions.AnswerRegisterDoctor;
 import co.com.choucair.certification.automationDemoSite.tasks.OpenRegisterDoctor;
 import co.com.choucair.certification.automationDemoSite.tasks.OpenUp;
 import co.com.choucair.certification.automationDemoSite.tasks.RegisterDoctor;
-import co.com.choucair.certification.automationDemoSite.utils.GenerateRandomIdNumber;
 import cucumber.api.java.Before;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
@@ -16,12 +15,12 @@ import net.serenitybdd.screenplay.actors.OnlineCast;
 
 import java.util.List;
 
-public class AutomationDemoSiteStepDefinitions {
+public class AutomationDoctorStepDefinitions {
     @Before
     public void setStage(){ OnStage.setTheStage(new OnlineCast()); }
 
     @Given("^que Carlos necesita registrar un nuevo doctor$")
-    public void que_carlos_necesita_registrar_un_nuevo_doctor() throws Throwable {
+    public void que_carlos_necesita_registrar_un_nuevo_doctor(){
         OnStage.theActorCalled("Carlos").wasAbleTo(OpenUp.thePage(), OpenRegisterDoctor.doctorForm());
     }
 
@@ -32,7 +31,7 @@ public class AutomationDemoSiteStepDefinitions {
 
     @Then("^el verifica que se presente en pantalla el mensaje Datos guardados correctamente$")
     public void el_verifica_que_se_presente_en_pantalla_el_mensaje_datos_guardados_correctamente(List<DoctorData> doctorDataList) throws Throwable {
-        OnStage.theActorInTheSpotlight().should(GivenWhenThen.seeThat(Answer.toThe(doctorDataList)));
+        OnStage.theActorInTheSpotlight().should(GivenWhenThen.seeThat(AnswerRegisterDoctor.toThe(doctorDataList)));
     }
 
 
