@@ -1,13 +1,10 @@
 package co.com.choucair.certification.automationDemoSite.stepDefinitions;
 
-import co.com.choucair.certification.automationDemoSite.model.dataDriven.ParameterizedTest;
-import co.com.choucair.certification.automationDemoSite.questions.AnswerRegisterDoctor;
+import co.com.choucair.certification.automationDemoSite.model.PatientData;
 import co.com.choucair.certification.automationDemoSite.questions.AnswerRegisterPatient;
 import co.com.choucair.certification.automationDemoSite.tasks.OpenRegisterPatient;
 import co.com.choucair.certification.automationDemoSite.tasks.OpenUp;
-import co.com.choucair.certification.automationDemoSite.tasks.RegisterDoctor;
 import co.com.choucair.certification.automationDemoSite.tasks.RegisterPatient;
-import cucumber.api.PendingException;
 import cucumber.api.java.Before;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
@@ -29,7 +26,7 @@ public class AutomationPatientStepDefinitions {
     }
 
     @When("^el realiza el registro del paciente en el aplicativo de Administración de Hospitales$")
-    public void el_realiza_el_registro_del_paciente_en_el_aplicativo_de_administracin_de_hospitales(List<ParameterizedTest> patientData){
+    public void el_realiza_el_registro_del_paciente_en_el_aplicativo_de_administracin_de_hospitales(List<PatientData> patientData){
         OnStage.theActorInTheSpotlight().attemptsTo(RegisterPatient.patientForm(patientData));
     }
 

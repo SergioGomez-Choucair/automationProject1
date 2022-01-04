@@ -1,7 +1,6 @@
 package co.com.choucair.certification.automationDemoSite.tasks;
 
-import co.com.choucair.certification.automationDemoSite.model.dataDriven.ParameterizedTest;
-import co.com.choucair.certification.automationDemoSite.userInterface.RegisterDoctorPage;
+import co.com.choucair.certification.automationDemoSite.model.PatientData;
 import co.com.choucair.certification.automationDemoSite.userInterface.RegisterPatientPage;
 import co.com.choucair.certification.automationDemoSite.utils.GenerateRandomIdNumber;
 import net.serenitybdd.screenplay.Actor;
@@ -14,13 +13,13 @@ import java.util.List;
 
 public class RegisterPatient implements Task {
 
-    private final List<ParameterizedTest> patientData;
+    private final List<PatientData> patientData;
 
-    public RegisterPatient(List<ParameterizedTest> patientData) {
+    public RegisterPatient(List<PatientData> patientData) {
         this.patientData = patientData;
     }
 
-    public static RegisterPatient patientForm(List<ParameterizedTest> patientData){
+    public static RegisterPatient patientForm(List<PatientData> patientData){
         return Tasks.instrumented(RegisterPatient.class,patientData);
     }
 

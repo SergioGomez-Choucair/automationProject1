@@ -5,7 +5,6 @@ public class DoctorData {
     public String nombres;
     public String apellidos;
     public String telefono;
-    public String numero_documento;
     public String mensaje;
 
     public String getMensaje() {
@@ -38,14 +37,6 @@ public class DoctorData {
 
     public void setTelefono(String telefono) {
         this.telefono = telefono;
-    }
-
-    public String getNumero_documento() {
-        return numero_documento;
-    }
-
-    public void setNumero_documento(String numero_documento) {
-        this.numero_documento = numero_documento;
     }
 
 }
